@@ -10,6 +10,33 @@ Gal Bar 200462133, Gal Steimberg 201253572
 We would like to preprocess the data into a graph to better understand it. By picturing the data as a graph we will be able to take the largest connectivity component and answer question 1a accordingly.
 The following is the code we used to create the graph seen below it.
 
+``` r
+install.packages("igraph")
+library(igraph)
+
+#read the given .csv files from the local path
+relations <- read.csv(file="C:/src/Academy/ga_edgelist.csv", header=T, sep=",")
+actors <- read.csv(file="C:/src/Academy/ga_actors.csv", header=T, sep=",")
+
+#create the graph data frame from the fetched data
+graph <- graph.data.frame(relations, directed=FALSE, vertices=actors)
+
+#create a subgraph with the greatest tethering component
+gtc <- which.max(components(graph)$csize)
+subv <- V(graph)[which(components(graph)$membership==gtc)]
+gtc_graph <- induced.subgraph(graph=graph, vids=subv)
+
+#seperate into two groups by gender
+women <- which(V(gtc_graph)$gender=="F")
+V(gtc_graph)$color <- "green"
+V(gtc_graph)$color[women] <- "red"
+
+#print the graph
+plot(gtc_graph)
+```
+
+![](images/preprocess.png)
+
 
 As seen in the graph, we extracted the largest component in the graph. Let's calculate the scores for each measure requested.
 
