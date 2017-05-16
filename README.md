@@ -91,22 +91,78 @@ Sloan has the highest Eigenvector measure with
 ### 1 - Louvain Clustering
 The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre.[1] The method is a greedy optimization method that appears to run in time O(n log n).
 
+``` r
+#cluster louvain
+set.seed(1)
+cl <- cluster_louvain(graph)
+cl
+```
+
+     IGRAPH clustering multi level, groups: 6, mod: 0.59
+     + groups:
+       $`1`
+       [1] "bailey" "ben"    "tucker"
+
+       $`2`
+       [1] "addison" "derek"   "finn"    "grey"    "steve"  
+
+       $`3`
+       [1] "avery" "lexi"  "nancy" "sloan"
+
+       $`4`
+       + ... omitted several groups/vertices
+
 #### Graph Painting
 
+``` r
+plot(graph, vertex.color=membership(cl))
+```
+
+![](images/cluster1.png)
 
 #### Number of Communities
 
+We can see from the table provided above that the number of communities = **6**
 
 #### Modularity Score
+
+We can see from the table provided above that the modularity score = **0.59**
 
 
 ### 2 - Girvan-Newman Clustering
 The Girvan–Newman algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
 
-#### Graph Painting
+``` r
+#cluster edge betweenness
+set.seed(1)
+ceb <- cluster_edge_betweenness(graph)
+ceb
+```
+     IGRAPH clustering edge betweenness, groups: 7, mod: 0.58
+     + groups:
+       $`1`
+       [1] "addison"      "avery"        "karev"        "kepner"       "lexi"        
+       [6] "mrs. seabury" "nancy"        "sloan"       
 
+       $`2`
+       [1] "adele"       "chief"       "ellis grey"  "susan grey"  "thatch grey"
+
+       $`3`
+       [1] "altman"  "colin"   "owen"    "preston" "yang"   
+
+       + ... omitted several groups/vertices
+   
+       
+#### Graph Painting
+``` r
+plot(graph, vertex.color=membership(ceb))
+```
 
 #### Number of Communities
-
+We can see from the table provided above that the number of communities = **7**
 
 #### Modularity Score
+We can see from the table provided above that the modularity score = **0.58**
+
+
+
