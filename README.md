@@ -5,6 +5,7 @@ Gal Bar 200462133, Gal Steimberg 201253572
 
 
 ## Question 1.a
+================
 
 #### Data Preprocessing
 We would like to preprocess the data into a graph to better understand it. By picturing the data as a graph we will be able to take the largest connectivity component and answer question 1a accordingly.
@@ -26,3 +27,28 @@ Eigenvector is a measure of the influence of a node in a network. It assigns rel
 
 
 
+## Question 1.b
+================
+
+#### 1 - Louvain Clustering
+The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre.[1] The method is a greedy optimization method that appears to run in time O(n log n).
+
+#### Graph Painting
+
+
+#### Number of Communities
+
+
+#### Modularity Score
+
+
+#### 2 - Girvan-Newman Clustering
+The Girvan–Newman algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
+
+#### Graph Painting
+
+
+#### Number of Communities
+
+
+#### Modularity Score
