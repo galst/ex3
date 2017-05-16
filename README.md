@@ -166,3 +166,4 @@ We can see from the table provided above that the modularity score = **0.58**
 
 
 
+## Question 2.a
