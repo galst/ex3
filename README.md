@@ -77,14 +77,6 @@ closeness
     
 Torress has the highest closeness centrality with 0.017543860
 
-#### Eigenvector
-Eigenvector is a measure of the influence of a node in a network. It assigns relative scores to all nodes in the network based on the concept that connections to high-scoring nodes contribute more to the score of the node in question than equal connections to low-scoring nodes.
-``` r
-
-```
-
-
-Sloan has the highest Eigenvector measure with 
 
 ## Question 1.b
 
