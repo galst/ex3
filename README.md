@@ -81,7 +81,7 @@ Torress has the highest closeness centrality with 0.017543860
 ## Question 1.b
 
 ### 1 - Louvain Clustering
-The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre.[1] The method is a greedy optimization method that appears to run in time O(n log n).
+The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre. The method is a greedy optimization method that appears to run in time O(n log n).
 
 ``` r
 #cluster louvain
@@ -300,7 +300,7 @@ closeness
 
 
 #### 1 - Louvain Clustering
-The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre.[1] The method is a greedy optimization method that appears to run in time O(n log n).
+The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre. The method is a greedy optimization method that appears to run in time O(n log n).
 
 ``` r
 #cluster louvain
