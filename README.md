@@ -315,7 +315,7 @@ cl
 plot(graph, vertex.color=membership(cl))
 ```
 
-![](images/Louvain.png)
+![](images/louv.png)
 
 ##### Number of Communities
 
