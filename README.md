@@ -245,6 +245,9 @@ We will now take the matrix that we built to build a weighted and undirected gra
  - Design and edit the graph
  - Print the graph
  
+The terms will be the vertices and there will be and edge between each two vertices that the terms were in the same Facebook post. 
+The weights of the graph are the number of times the terms were found in the same post.
+
 ``` r
 graph <- graph.adjacency(tm, weighted=T, mode="undirected")
 graph <- simplify(graph)
