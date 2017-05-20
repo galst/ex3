@@ -372,7 +372,7 @@ plot(graph, vertex.color=membership(cl))
 
 ##### Number of Communities
 
-We can see from the table provided above that the number of communities = **6**
+We can see from the table provided above that the number of communities = **7**
 
 ##### Modularity Score
 
