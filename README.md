@@ -288,6 +288,8 @@ betweenness
  3.8761905  6.2857143  4.7383117 21.9645022 20.8054113 
 ```   
 
+'next' has the highest betweeness centrality with 21.9645022
+ 
 #### Closeness
 ``` r
 closeness <- closeness(graph, vids=V(graph))
@@ -301,6 +303,8 @@ closeness
       just       mile   marathon       next        get 
 0.03030303 0.03225806 0.03225806 0.03571429 0.03703704 
 ```   
+
+'amaz' has the highest closeness centrality with 0.03846154
 
 
 #### 1 - Louvain Clustering
