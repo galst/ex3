@@ -278,8 +278,7 @@ betweenness <- betweenness(graph, v=V(graph))
 betweenness
 ```   
 ```   
-
-kipchog       nike     record       amaz        run     second       time 
+   kipchog       nike     record       amaz        run     second       time 
 12.0839827  0.0000000  7.3389610 19.5346320  0.1428571  1.0214286  3.1023810 
      watch       will      break       this        and        the       hour 
  0.0000000  0.1428571  0.0000000  1.2595238  6.0707792  1.6337662  0.0000000 
@@ -298,7 +297,7 @@ closeness
      watch       will      break       this        and        the       hour 
 0.02439024 0.02702703 0.02564103 0.02857143 0.03448276 0.03030303 0.01960784 
       just       mile   marathon       next        get 
-0.03030303 0.03225806 0.03225806 0.03571429 0.03703704
+0.03030303 0.03225806 0.03225806 0.03571429 0.03703704 
 ```   
 
 
@@ -311,6 +310,18 @@ set.seed(1)
 cl <- cluster_louvain(graph)
 cl
 ```
+IGRAPH clustering multi level, groups: 3, mod: 0.065
++ groups:
+  $`1`
+  [1] "run"      "second"   "hour"     "mile"     "marathon"
+  
+  $`2`
+  [1] "kipchog" "nike"    "record"  "amaz"    "watch"   "break"   "this"   
+  [8] "just"    "get"    
+  
+  $`3`
+  [1] "time" "will" "and"  "the"  "next"
+  
 
 ##### Graph Painting
 
@@ -322,11 +333,11 @@ plot(graph, vertex.color=membership(cl))
 
 ##### Number of Communities
 
-We can see from the table provided above that the number of communities = **6**
+We can see from the table provided above that the number of communities = **3**
 
 ##### Modularity Score
 
-We can see from the table provided above that the modularity score = **0.59**
+We can see from the table provided above that the modularity score = **0.065**
 
 
 #### 1 - Girvan-Newman Clustering
@@ -337,6 +348,19 @@ set.seed(1)
 cl <- cluster_louvain(graph)
 cl
 ```
+IGRAPH clustering edge betweenness, groups: 7, mod: 0.0084
++ groups:
+  $`1`
+   [1] "kipchog"  "nike"     "record"   "amaz"     "run"      "second"  
+   [7] "watch"    "break"    "this"     "hour"     "just"     "mile"    
+  [13] "marathon"
+  
+  $`2`
+  [1] "time"
+  
+  $`3`
+  [1] "will"
+  + ... omitted several groups/vertices
 
 ##### Graph Painting
 
