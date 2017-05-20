@@ -157,7 +157,7 @@ ceb
 ``` r
 plot(graph, vertex.color=membership(ceb))
 ```
-![](images/girven1.png)
+![](images/ebc1.png)
 
 
 #### Number of Communities
@@ -376,7 +376,7 @@ IGRAPH clustering edge betweenness, groups: 7, mod: 0.0084
 plot(graph, vertex.color=membership(cl))
 ```
 
-![](images/girvan.png)
+![](images/ebc.png)
 
 ##### Number of Communities
 
