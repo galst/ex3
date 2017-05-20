@@ -118,7 +118,7 @@ cl
 plot(graph, vertex.color=membership(cl))
 ```
 
-![](images/cluster1.png)
+![](images/louv.png)
 
 #### Number of Communities
 
@@ -166,7 +166,7 @@ We can see from the table provided above that the modularity score = **0.58**
 
 
 
-## Question 2.a
+## Question 2
 
 We will perform social netwrok analysis on "Nike" Facebook feed. We will use the credentials to retrieve these posts and then perform some additional editing and preprocessing on the posts.
 
@@ -297,4 +297,57 @@ closeness
 0.03030303 0.03225806 0.03225806 0.03571429 0.03703704
 ```   
 
+### Part 1 Questions on Question 2 (Clustering)
+
+#### 1 - Louvain Clustering
+The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre.[1] The method is a greedy optimization method that appears to run in time O(n log n).
+
+``` r
+#cluster louvain
+set.seed(1)
+cl <- cluster_louvain(graph)
+cl
+```
+
+##### Graph Painting
+
+``` r
+plot(graph, vertex.color=membership(cl))
+```
+
+![](images/Louvain.png)
+
+##### Number of Communities
+
+We can see from the table provided above that the number of communities = **6**
+
+##### Modularity Score
+
+We can see from the table provided above that the modularity score = **0.59**
+
+
+#### 1 - Girvan-Newman Clustering
+The Girvan–Newman algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
+``` r
+#cluster louvain
+set.seed(1)
+cl <- cluster_louvain(graph)
+cl
+```
+
+##### Graph Painting
+
+``` r
+plot(graph, vertex.color=membership(cl))
+```
+
+![](images/girvan.png)
+
+##### Number of Communities
+
+We can see from the table provided above that the number of communities = **6**
+
+##### Modularity Score
+
+We can see from the table provided above that the modularity score = **0.59**
 
