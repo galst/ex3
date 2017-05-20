@@ -167,3 +167,60 @@ We can see from the table provided above that the modularity score = **0.58**
 
 
 ## Question 2.a
+
+We will perform social netwrok analysis on "Nike" Facebook feed. We will use the credentials to retrieve these posts and then perform some additional editing and preprocessing on the posts.
+
+#### Configurating credentials and retrieving the data
+
+``` r
+app_id <- "219936741834182"
+app_secret <- "1e8ad2627d99702754e9487af039a571"
+fb_oauth <- fbOAuth(app_id, app_secret)
+access_token <- "EAADICANevcYBALERIpywySq2x3YZBNBU9Wr2jR4ZA8Vsh5aQTWtngZAsIZAMi8zFRroGCEVkJBI9ab1ZBpLws3KYrxQhnVZB4DDm6yML9vZCDHAb4HJZACgZAjUca67Jyl3t7klRQfNRUMuYp8oldMeLKzPZAhucyCXscZD"
+
+nike_page <- getPage(page="nike", token=access_token)
+nike_post <- getPost(post=nike_page$id[1], n=100, token=access_token)
+nike_message <- (nike_post$comments)$message
+
+docs <- Corpus(VectorSource(nike_message))
+```
+#### Editing and preprocessing
+
+To create the graph we want, we need to preprocess the data that we have and produce a more organized set of data
+
+``` r
+#Convert the text to lower case
+docs <- tm_map(docs, content_transformer(tolower))
+
+#Remove numbers
+docs <- tm_map(docs, removeNumbers)
+
+#Remove english common stopwords
+docs <- tm_map(docs, removeWords, stopwords("english"))
+
+#Remove punctuations
+docs <- tm_map(docs, removePunctuation)
+
+#Eliminate extra white spaces
+docs <- tm_map(docs, stripWhitespace)
+
+#Text stemming
+docs <- tm_map(docs, stemDocument)
+```
+
+We also used word counting to create a word cloud that would give us a perspective on the number of words in the data:
+
+``` r
+#Word counts
+tdm <- TermDocumentMatrix(docs)
+m <- as.matrix(tdm)
+v <- sort(rowSums(m), decreasing=TRUE)
+d <- data.frame(word=names(v), freq=v)
+head(d, 10)
+
+#Draw word cloud
+wordcloud(words=d$word, freq=d$freq, min.freq=1, max.words=200, random.order=FALSE, rot.per=0.35, colors=brewer.pal(8, "Dark2"))
+
+```
+![](images/cloud.png)
+
