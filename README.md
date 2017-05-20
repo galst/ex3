@@ -129,8 +129,8 @@ We can see from the table provided above that the number of communities = **6**
 We can see from the table provided above that the modularity score = **0.59**
 
 
-### 2 - Girvan-Newman Clustering
-The Girvan–Newman algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
+### 2 - Edge Betweeness Clustering
+The Edge Betweenness algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
 
 ``` r
 #cluster edge betweenness
@@ -343,8 +343,8 @@ We can see from the table provided above that the number of communities = **3**
 We can see from the table provided above that the modularity score = **0.065**
 
 
-#### 1 - Girvan-Newman Clustering
-The Girvan–Newman algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
+#### 1 - Edge Betweenness Clustering
+The Edge Betweenness Clustering algorithm detects communities by progressively removing edges from the original network. The connected components of the remaining network are the communities. Instead of trying to construct a measure that tells us which edges are the most central to communities, the Girvan–Newman algorithm focuses on edges that are most likely "between" communities.
 ``` r
 #cluster louvain
 set.seed(1)
