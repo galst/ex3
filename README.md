@@ -266,3 +266,35 @@ plot(graph, layout=layout)
 
 ![](images/adjancecy.png)
 
+
+#### Betweeness
+
+``` r
+betweenness <- betweenness(graph, v=V(graph))
+betweenness
+```   
+```   
+
+kipchog       nike     record       amaz        run     second       time 
+12.0839827  0.0000000  7.3389610 19.5346320  0.1428571  1.0214286  3.1023810 
+     watch       will      break       this        and        the       hour 
+ 0.0000000  0.1428571  0.0000000  1.2595238  6.0707792  1.6337662  0.0000000 
+      just       mile   marathon       next        get 
+ 3.8761905  6.2857143  4.7383117 21.9645022 20.8054113 
+```   
+
+#### Closeness
+``` r
+closeness <- closeness(graph, vids=V(graph))
+closeness
+```
+```  
+   kipchog       nike     record       amaz        run     second       time 
+0.03571429 0.02439024 0.03448276 0.03846154 0.02564103 0.03030303 0.03225806 
+     watch       will      break       this        and        the       hour 
+0.02439024 0.02702703 0.02564103 0.02857143 0.03448276 0.03030303 0.01960784 
+      just       mile   marathon       next        get 
+0.03030303 0.03225806 0.03225806 0.03571429 0.03703704
+```   
+
+
