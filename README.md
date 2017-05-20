@@ -310,6 +310,7 @@ set.seed(1)
 cl <- cluster_louvain(graph)
 cl
 ```
+```
 IGRAPH clustering multi level, groups: 3, mod: 0.065
 + groups:
   $`1`
@@ -321,7 +322,7 @@ IGRAPH clustering multi level, groups: 3, mod: 0.065
   
   $`3`
   [1] "time" "will" "and"  "the"  "next"
-  
+```  
 
 ##### Graph Painting
 
@@ -348,6 +349,7 @@ set.seed(1)
 cl <- cluster_louvain(graph)
 cl
 ```
+```
 IGRAPH clustering edge betweenness, groups: 7, mod: 0.0084
 + groups:
   $`1`
@@ -361,7 +363,7 @@ IGRAPH clustering edge betweenness, groups: 7, mod: 0.0084
   $`3`
   [1] "will"
   + ... omitted several groups/vertices
-
+```
 ##### Graph Painting
 
 ``` r
