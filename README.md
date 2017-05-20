@@ -118,7 +118,7 @@ cl
 plot(graph, vertex.color=membership(cl))
 ```
 
-![](images/louv.png)
+![](images/louv1.png)
 
 #### Number of Communities
 
@@ -157,6 +157,8 @@ ceb
 ``` r
 plot(graph, vertex.color=membership(ceb))
 ```
+![](images/girven1.png)
+
 
 #### Number of Communities
 We can see from the table provided above that the number of communities = **7**
