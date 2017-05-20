@@ -224,3 +224,45 @@ wordcloud(words=d$word, freq=d$freq, min.freq=1, max.words=200, random.order=FAL
 ```
 ![](images/cloud.png)
 
+#### Transform data to adjacency matrix
+
+We create a TermDocumentMatrix object to perform the analysis. We use this anlaysis to choose only the terms which occure more than 10 times in the document.
+
+``` r
+tdm <- TermDocumentMatrix(docs)
+freq_terms <- findFreqTerms(tdm, lowfreq=10)
+tdm <- tdm[freq_terms, ]
+m <- as.matrix(tdm)
+m[m >= 1] <- 1
+tm <- m %*% t(m)
+```
+
+We will now take the matrix that we built to build a weighted and undirected graph:
+ 
+ - Build graph
+ - Remove loops
+ - Set labels and degrees of vertices
+ - Design and edit the graph
+ - Print the graph
+ 
+``` r
+graph <- graph.adjacency(tm, weighted=T, mode="undirected")
+graph <- simplify(graph)
+
+V(graph)$label <- V(graph)$name
+V(graph)$degree <- degree(graph)
+
+V(graph)$label.cex <- 2.2 * V(graph)$degree / max(V(graph)$degree)+ .2
+V(graph)$label.color <- rgb(0, 0, .2, .8)
+V(graph)$frame.color <- NA
+egam <- (log(E(graph)$weight)+.4) / max(log(E(graph)$weight)+.4)
+
+E(graph)$color <- rgb(.5, .5, 0, egam)
+E(graph)$width <- egam
+
+layout <- layout.fruchterman.reingold(graph)
+plot(graph, layout=layout)
+```
+
+![](images/adjancecy.png)
+
