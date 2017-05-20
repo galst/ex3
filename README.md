@@ -266,6 +266,7 @@ plot(graph, layout=layout)
 
 ![](images/adjancecy.png)
 
+### Part 1 Questions on Question 2 (Clustering)
 
 #### Betweeness
 
@@ -297,7 +298,6 @@ closeness
 0.03030303 0.03225806 0.03225806 0.03571429 0.03703704
 ```   
 
-### Part 1 Questions on Question 2 (Clustering)
 
 #### 1 - Louvain Clustering
 The Louvain Method for community detection is a method to extract communities from large networks created by Vincent Blondel, Jean-Loup Guillaume, Renaud Lambiotte and Etienne Lefebvre.[1] The method is a greedy optimization method that appears to run in time O(n log n).
